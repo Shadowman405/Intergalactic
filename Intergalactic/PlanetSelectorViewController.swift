@@ -43,7 +43,7 @@ class PlanetSelectorViewController: UIViewController, UITableViewDelegate, UITab
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let planetVC = segue.destination as? PlanetViewerVC {
-            planetVC.planet = planetToPass
+            planetVC.planetName = planetToPass
         }
     }
 
