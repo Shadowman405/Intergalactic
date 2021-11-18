@@ -1,37 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G8k-QS-geq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Planet Selector View Controller-->
+        <scene sceneID="jZW-GH-DgT">
+            <objects>
+                <viewController id="G8k-QS-geq" customClass="PlanetSelectorViewController" customModule="Intergalactic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yqg-jv-n1o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vla-vS-mBe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="planetCell" rowHeight="200" id="l8a-h7-fAR" customClass="PlanetCell" customModule="Intergalactic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l8a-h7-fAR" id="70z-bd-b1r">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth_nightmap" translatesAutoresizingMaskIntoConstraints="NO" id="7Ip-tv-Esl">
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="192"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qer-Rx-TVY">
+                                                    <rect key="frame" x="40" y="61" width="334" height="78"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="60"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7Ip-tv-Esl" secondAttribute="trailing" constant="8" id="BSd-Ia-mfx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Qer-Rx-TVY" secondAttribute="trailing" constant="20" id="Jug-16-DLb"/>
+                                                <constraint firstItem="Qer-Rx-TVY" firstAttribute="leading" secondItem="70z-bd-b1r" secondAttribute="leadingMargin" constant="20" id="Mml-qD-u0W"/>
+                                                <constraint firstItem="7Ip-tv-Esl" firstAttribute="top" secondItem="70z-bd-b1r" secondAttribute="top" id="YcH-1u-CRm"/>
+                                                <constraint firstItem="Qer-Rx-TVY" firstAttribute="centerY" secondItem="70z-bd-b1r" secondAttribute="centerY" id="atS-E7-3VD"/>
+                                                <constraint firstItem="Qer-Rx-TVY" firstAttribute="centerX" secondItem="70z-bd-b1r" secondAttribute="centerX" id="fSa-lT-Tex"/>
+                                                <constraint firstAttribute="bottom" secondItem="7Ip-tv-Esl" secondAttribute="bottom" constant="8" id="giq-YF-Q2x"/>
+                                                <constraint firstItem="7Ip-tv-Esl" firstAttribute="leading" secondItem="70z-bd-b1r" secondAttribute="leading" constant="8" id="pbi-WD-EaW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="planetImg" destination="7Ip-tv-Esl" id="q8d-TI-f71"/>
+                                            <outlet property="planetTitle" destination="Qer-Rx-TVY" id="BhT-kv-2HD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ziA-pJ-egf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ziA-pJ-egf" firstAttribute="trailing" secondItem="Vla-vS-mBe" secondAttribute="trailing" id="6qX-Ik-wA0"/>
+                            <constraint firstItem="Vla-vS-mBe" firstAttribute="leading" secondItem="ziA-pJ-egf" secondAttribute="leading" id="OP2-et-JAw"/>
+                            <constraint firstItem="ziA-pJ-egf" firstAttribute="bottom" secondItem="Vla-vS-mBe" secondAttribute="bottom" id="mHE-VJ-hPZ"/>
+                            <constraint firstItem="Vla-vS-mBe" firstAttribute="top" secondItem="ziA-pJ-egf" secondAttribute="top" id="rWN-xg-nYl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Vla-vS-mBe" id="Lnf-iT-wGR"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="toPlanet" id="fXf-9C-VRU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6rf-LO-RY6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="78"/>
+        </scene>
+        <!--Planet ViewerVC-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="PlanetViewerVC" customModule="Intergalactic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </arscnView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5Ja-F4-SI0"/>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="79"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="earth_nightmap" width="2048" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
